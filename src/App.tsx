@@ -1,4 +1,5 @@
 import FAQs from "./components/FAQs";
+import Footer from "./components/Footer";
 import Projects from "./components/Projects";
 import Services from "./components/Services";
 import Testinomals from "./components/Testinomals";
@@ -82,6 +83,7 @@ function App() {
       </div>
     </div>
     <FAQs />
+    <Footer />
 
     </>
   )
