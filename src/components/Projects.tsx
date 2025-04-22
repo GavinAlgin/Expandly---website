@@ -44,11 +44,13 @@ const Projects = () => {
       <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Column 1 */}
         <div className="relativep-4 rounded-md">
-          <img
-            src={col_IMG}
-            alt="Vision Driven"
-            className="rounded-md mb-4"
-          />
+          <div className='bg-gray-400'>
+            <img
+              src={col_IMG}
+              alt="Vision Driven"
+              className="rounded-md mb-4"
+            />
+          </div>
           <h3 className="text-sm font-bold mb-2 text-gray-400">UI/UX DESIGN ~ EDUCATION & RESEARCH</h3>
           <p className="text-black text-2xl">Conceptual design of an Learning Management system mobile application</p>
         </div>
