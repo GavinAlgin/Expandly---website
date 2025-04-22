@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100">
+    <footer className="bg-gradient-to-r from-gray-100 via-lime-300 to-gray-100">
       <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
@@ -38,16 +38,16 @@ const Footer = () => {
                 <a className="hover:opacity-75" href="#">About</a>
                 <a className="hover:opacity-75" href="#">Meet the Team</a>
                 <a className="hover:opacity-75" href="#">History</a>
-                <a className="hover:opacity-75" href="#">Careers</a>
+                <a className="hover:opacity-75" href="#">Talk to us</a>
               </nav>
             </div>
             <div>
               <p className="font-medium">Services</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                <a className="hover:opacity-75" href="#">1on1 Coaching</a>
-                <a className="hover:opacity-75" href="#">Company Review</a>
-                <a className="hover:opacity-75" href="#">Accounts Review</a>
-                <a className="hover:opacity-75" href="#">HR Consulting</a>
+                <a className="hover:opacity-75" href="#">Web Development</a>
+                <a className="hover:opacity-75" href="#">Mobile Development</a>
+                <a className="hover:opacity-75" href="#">UI/UX Design</a>
+                <a className="hover:opacity-75" href="#">IT Support</a>
                 <a className="hover:opacity-75" href="#">SEO Optimisation</a>
               </nav>
             </div>
@@ -71,7 +71,7 @@ const Footer = () => {
           </div>
         </div>
         <p className="mt-8 text-xs text-gray-800">
-          © 2022 Company Name
+          © 2025 Expandly
         </p>
       </div>
     </footer>

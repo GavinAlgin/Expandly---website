@@ -76,7 +76,7 @@ function App() {
           </div>
           <button 
             type="submit" 
-            className="bg-white text-black hover:bg-lime-500 hover:text-white transition-all font-bold py-2 px-4 rounded cursor-pointer">
+            className="bg-lime-500 text-white hover:bg-white hover:text-black transition-all font-bold py-2 px-4 rounded cursor-pointer">
             Send Message
           </button>
         </form>
