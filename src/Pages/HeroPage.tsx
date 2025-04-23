@@ -1,6 +1,6 @@
-import React, { useRef, useEffect } from 'react'
-import Navbar from '../components/Navbar'
-import { motion, useAnimation, useInView } from 'framer-motion'
+import React, { useRef, useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import { motion, useAnimation, useInView } from 'framer-motion';
 
 // Text animation variants
 const container = {
@@ -12,7 +12,7 @@ const container = {
       delayChildren: 0.2 * i,
     },
   }),
-}
+};
 
 const child = {
   hidden: {
@@ -27,11 +27,11 @@ const child = {
       ease: 'easeOut',
     },
   },
-}
+};
 
 // AnimatedText Component
 const AnimatedText = ({ text, className = '', delay = 0 }) => {
-  const words = text.split(' ')
+  const words = text.split(' ');
   return (
     <motion.div
       className={`flex flex-wrap justify-center ${className}`}
@@ -50,18 +50,18 @@ const AnimatedText = ({ text, className = '', delay = 0 }) => {
         </motion.span>
       ))}
     </motion.div>
-  )
-}
+  );
+};
 
 // StatsSection with scroll animation
 const StatsSection = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-100px' })
-  const controls = useAnimation()
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const controls = useAnimation();
 
   useEffect(() => {
-    if (isInView) controls.start('visible')
-  }, [isInView, controls])
+    if (isInView) controls.start('visible');
+  }, [isInView, controls]);
 
   const variant = {
     hidden: { opacity: 0, y: 40 },
@@ -74,12 +74,12 @@ const StatsSection = () => {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   const item = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
-  }
+  };
 
   return (
     <motion.div
@@ -87,7 +87,7 @@ const StatsSection = () => {
       variants={variant}
       initial="hidden"
       animate={controls}
-      className="flex flex-wrap justify-center gap-6 mt-6"
+      className="flex flex-wrap justify-center gap-4 md:gap-6 mt-4 md:mt-6"
     >
       {[
         {
@@ -124,35 +124,35 @@ const StatsSection = () => {
         <motion.span
           key={idx}
           variants={item}
-          className="flex items-center gap-2 text-sm md:text-base font-semibold text-gray-800"
+          className="flex items-center gap-2 text-sm font-semibold text-gray-800"
         >
           {icon}
-          {text}
+          <span className="max-w-xs">{text}</span>
         </motion.span>
       ))}
     </motion.div>
-  )
-}
+  );
+};
 
 const HeroPage = () => {
   return (
-    <div className="bg-white h-screen flex flex-col">
+    <div className="bg-white flex flex-col min-h-screen">
       <Navbar />
-      <div className="flex-grow flex flex-col justify-center items-center text-center px-6">
+      <div className="flex-grow flex flex-col justify-center items-center text-center px-6 sm:px-8 lg:px-16">
         <AnimatedText
           text="Your Innovative Partner for Impactful Solutions"
-          className="text-5xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-white"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-white leading-tight"
           delay={0}
         />
         <AnimatedText
           text="Creative and innovative web solutions for firms and emerging businesses wanting to establish a strong foundation."
-          className="font-semibold mt-6 text-gray-600 max-w-2xl"
+          className="font-semibold mt-4 sm:mt-6 text-gray-600 max-w-xl md:max-w-2xl"
           delay={1}
         />
         <StatsSection />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HeroPage
+export default HeroPage;
