@@ -12,7 +12,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="md:flex md:items-center md:gap-12">
             <a className="block text-black font-bold text-xl" href="#">
-              Expandly<span className="text-lime-500">.</span>
+              TechLoom<span className="text-blue-700">.</span>
             </a>
           </div>
 
@@ -39,9 +39,9 @@ const Navbar = () => {
                   </button>
                   {aboutOpen && (
                     <ul className="absolute mt-2 w-40 bg-white border rounded shadow-lg z-10">
-                      <li><a href="#" className="block px-4 py-2 hover:bg-lime-100">Our Story</a></li>
-                      <li><a href="#" className="block px-4 py-2 hover:bg-lime-100">How we work</a></li>
-                      <li><a href="#" className="block px-4 py-2 hover:bg-lime-100">Team</a></li>
+                      <li><a href="#" className="block px-4 py-2 hover:bg-blue-100">Our Story</a></li>
+                      <li><a href="#" className="block px-4 py-2 hover:bg-blue-100">How we work</a></li>
+                      <li><a href="#" className="block px-4 py-2 hover:bg-blue-100">Team</a></li>
                     </ul>
                   )}
                 </li>
@@ -50,7 +50,7 @@ const Navbar = () => {
                 <li className="relative group">
                   <button
                     onClick={() => setServicesOpen(!servicesOpen)}
-                    className="flex items-center gap-1 text-black font-medium text-lg transition hover:text-lime-500 cursor-pointer">
+                    className="flex items-center gap-1 text-black font-medium text-lg transition hover:text-blue-500 cursor-pointer">
                     Services
                     <svg
                       className={`w-4 h-4 transform transition-transform ${servicesOpen ? 'rotate-180' : ''}`}
@@ -73,11 +73,11 @@ const Navbar = () => {
                 </li>
 
                 <li>
-                  <a className="text-black font-medium text-lg transition hover:text-lime-500" href="#">Projects</a>
+                  <a className="text-black font-medium text-lg transition hover:text-blue-500" href="#">Projects</a>
                 </li>
 
                 <li>
-                  <a className="text-black font-medium text-lg transition hover:text-lime-500" href="#">Blog</a>
+                  <a className="text-black font-medium text-lg transition hover:text-blue-500" href="#">Blog</a>
                 </li>
               </ul>
             </nav>
@@ -87,7 +87,7 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
             <div className="sm:flex sm:gap-4">
               <a
-                className="rounded-md bg-black hover:bg-lime-500 px-5 py-2.5 text-sm font-medium text-white hover:text-black text-medium shadow-sm transition"
+                className="rounded-md bg-blue-700 hover:bg-blue-500 px-5 py-2.5 text-sm font-medium text-white hover:text-black text-medium shadow-sm transition"
                 href="#">
                 Let's Talk →
               </a>
