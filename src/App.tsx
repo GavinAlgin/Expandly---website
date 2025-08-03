@@ -1,16 +1,24 @@
-import ExperienceSection from "./components/LandingPage/ExperienceSection"
-import HeroSection from "./components/LandingPage/HeroSection"
-import ServicesSection from "./components/LandingPage/ServicesSection"
+import { BrowserRouter, useRoutes } from 'react-router-dom'
+import routes from './routes/AppRoutes'
+import { Suspense } from 'react';
+
 
 function App() {
+  const routing = useRoutes(routes);
 
   return (
     <>
-    <HeroSection />
-    <ExperienceSection />
-    <ServicesSection />
+    <Suspense fallback={<div>Loading...</div>}>
+      {routing}
+    </Suspense>
     </>
   )
 }
 
-export default App
+const AppWrapper = () => (
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+)
+
+export default AppWrapper

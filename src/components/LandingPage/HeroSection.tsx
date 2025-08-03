@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Aurora from '../ui/Aurora';
+import { NavLink } from 'react-router-dom';
 
 const HeroSection = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -55,6 +56,7 @@ const HeroSection = () => {
                       <ul className="absolute mt-2 w-40 bg-white border rounded shadow-lg z-20">
                         <li><a href="#" className="block px-4 py-2 hover:bg-blue-100">Our Story</a></li>
                         <li><a href="#" className="block px-4 py-2 hover:bg-blue-100">How we work</a></li>
+                        <li><a href="#" className="block px-4 py-2 hover:bg-blue-100">Products</a></li>
                         <li><a href="#" className="block px-4 py-2 hover:bg-blue-100">Team</a></li>
                       </ul>
                     )}
@@ -87,13 +89,13 @@ const HeroSection = () => {
                   </li>
 
                   <li>
-                    <a className="text-white font-medium text-lg transition hover:text-blue-500 relative group">
+                    <a className="text-white font-medium text-lg transition hover:text-blue-500 relative group cursor-pointer">
                       Projects
                       <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-blue-800 transition-all group-hover:w-full"></span>
                     </a>
                   </li>
                   <li>
-                    <a className="text-white font-medium text-lg transition hover:text-blue-500 relative group">
+                    <a className="text-white font-medium text-lg transition hover:text-blue-500 relative group cursor-pointer">
                       Blog
                       <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-blue-800 transition-all group-hover:w-full"></span>
                     </a>
@@ -105,12 +107,11 @@ const HeroSection = () => {
             {/* Right Side Buttons */}
             <div className="flex items-center gap-4">
               <div className="sm:flex sm:gap-4">
-                <a
-                  className="rounded-md bg-blue-800 border bg-transparent px-5 py-2.5 text-sm font-medium text-white hover:text-black shadow-sm transition"
-                  href="#"
-                >
+                <NavLink 
+                  className="rounded-md hover:border-blue-800 border bg-transparent px-5 py-2.5 text-sm font-medium text-white hover:text-blue-800 shadow-sm transition"
+                  to="/form">
                   Let's Talk →
-                </a>
+                </NavLink>
               </div>
 
               {/* Mobile Menu Toggle */}
