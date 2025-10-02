@@ -12,12 +12,12 @@ const ExperienceSection = () => {
   }, [])
 
   return (
-    <section className="w-full h-[110vh] py-16 px-6 md:px-20 bg-black" >
+    <section className="w-full h-1/2 py-16 px-6 md:px-20 mt-8" >
       <div className="flex flex-col md:flex-row items-start justify-center relative">
 
         {/* Left Side */}
         <div className="md:w-1/2 pr-0 md:pr-12 mb-12 md:mb-0">
-          <h2 className="text-4xl md:text-5xl font-bold text-blue-800 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#196be4] leading-tight">
             5 Years of Experience Confirm Our Competence
           </h2>
         </div>
@@ -44,17 +44,17 @@ const ExperienceSection = () => {
       </div>
 
       {/* visual seciton */}
-      <div className='h-screen flex justify-center items-center relative'>
+      {/* <div className='h-screen flex justify-center items-center relative'>
 
         {/* Image side */}
-        <div className='w-1/2 h-full flex flex-col justify-center items-center relative'>
+        {/* <div className='w-1/2 h-full flex flex-col justify-center items-center relative'>
           <div className='absolute top-0 left-0 w-full justify-center items-center'>
             <img src={serviceIMG} alt="img" className='w-full h-full object-cover'/>
           </div>
-        </div>
+        </div> */}
 
         {/* Text side */}
-        <div className='w-1/2 h-full flex justify-center items-center relative m-6'>
+        {/* <div className='w-1/2 h-full flex justify-center items-center relative m-6'>
           <div className="flex-grow">
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
               We build stunning websites and drive digital growth.
@@ -65,8 +65,8 @@ const ExperienceSection = () => {
               From code to campaigns, we’ve got you covered.
             </p>
           </div>
-        </div>
-      </div>
+        </div> 
+      </div> */}
     </section>
   )
 }
