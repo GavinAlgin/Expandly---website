@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -29,9 +30,7 @@ export default function ServicesSection() {
       <h2 className="text-white text-4xl font-semibold text-center mb-[8rem]">
         What you can get out of us
       </h2>
-
-      {/* Removed Aura Background */}
-
+      
       {/* Services Content */}
       <div className="space-y-16 max-w-8xl mx-auto">
         {services.map((service, index) => (
@@ -48,7 +47,7 @@ export default function ServicesSection() {
             <div className="w-full sm:w-5/6">
               <h3 className="text-2xl font-semibold">{service.title}</h3>
               <p className="text-[#888888] mt-2 max-w-3xl">{service.description}</p>
-              <a href="/readmore" className="mt-2 hover:text-[#196be4] text-white">Readmore</a>
+              <Link to="/services" className="mt-2 hover:text-[#196be4] text-white">Read More</Link>
             </div>
           </motion.div>
         ))}

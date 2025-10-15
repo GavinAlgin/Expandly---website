@@ -6,18 +6,18 @@ import mock2 from '../../assets/webmock.jpeg'
 
 const projects = [
   {
-    title: 'Portfolio Website',
-    description: 'A modern portfolio built with React and TailwindCSS.',
+    title: 'Custom Web Development',
+    description: 'A modern and custom website which fits the asthetics and nature of your brand and style.',
     image: mock,
   },
   {
-    title: 'E-commerce Platform',
-    description: 'An e-commerce app with product listings and cart.',
+    title: 'Unique Mobile Development',
+    description: 'A modern and custom mobile native app which fits the asthetics and nature of your brand and style and complatible for both IOS and Andriod.',
     image: mock1,
   },
   {
-    title: 'Blog App',
-    description: 'A full-stack blog platform with markdown support.',
+    title: 'Offline / Low Connectivity & PWA‑First Experiences',
+    description: 'We allow your platform to target audience deals with intermittent connectivity (rural, mobile data constraints), then ensuring solutions work offline, gracefully degrade, cache well, minimal load etc.',
     image: mock2,
   },
 ]
@@ -60,14 +60,12 @@ function ProjectSection({ project, zIndex, overlap }) {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-      }}
-    >
+      }}>
       <motion.div
         className="p-6 sm:p-8 max-w-md"
         initial={{ opacity: 0 }}
         animate={{ opacity: inView ? 1 : 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-      >
+        transition={{ duration: 0.8, delay: 0.3 }}>
         <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
           {project.title}
         </h3>

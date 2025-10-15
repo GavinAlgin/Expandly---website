@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+// import express from 'express';
+// import nodemailer from 'nodemailer';
 
 type FormData = {
   name: string;
@@ -16,6 +18,7 @@ const ContactForm: React.FC = () => {
   const [form, setForm] = useState<FormData>(initialState);
   const [errors, setErrors] = useState<Partial<FormData>>({});
   const [submitted, setSubmitted] = useState(false);
+  // const router = express.Router();
 
   const validate = () => {
     const newErrors: Partial<FormData> = {};

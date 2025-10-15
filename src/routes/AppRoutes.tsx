@@ -6,6 +6,7 @@ const Form = lazy(() => import('../Pages/FormPage'));
 const TermsPage = lazy(() => import('../Pages/TermsPage'));
 const AboutPage = lazy(() => import('../Pages/AboutUsPage'));
 const PrivacyPage = lazy(() => import('../Pages/PrivacyPage'));
+const ServicesPage = lazy(() => import('../Pages/ServicesPage'));
 const ProjectsPage = lazy(() => import('../Pages/ProjectsPage'));
 const PricingPage = lazy(() => import('../Pages/PricingPage'));
 const NotFound = lazy(() => import('../Pages/NotFound'));
@@ -38,6 +39,10 @@ const routes = [
   {
     path: '/privacy',
     element: <PrivacyPage />,
+  },
+  {
+    path: '/services',
+    element: <ServicesPage />,
   },
   {
     path: '*',

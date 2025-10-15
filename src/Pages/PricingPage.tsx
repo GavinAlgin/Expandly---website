@@ -1,8 +1,16 @@
-import { useEffect, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/LandingPage/FooterSection';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
 
 const pricingPlans = [
   {
@@ -85,6 +93,43 @@ const PricingPage = () => {
     setOpenFAQ(openFAQ === index ? null : index);
   };
 
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const validateEmail = (email: string): boolean => {
+    return /\S+@\S+\.\S+/.test(email);
+  };
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const { name, email, message } = formData;
+
+    if (!name || !email || !message) {
+      toast.error("Please fill out all fields.");
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
+    // Simulate submission
+    toast.success("Message sent successfully!");
+
+    // Reset form
+    setFormData({ name: "", email: "", message: "" });
+  };
+
   return (
     <>
       <Navbar />
@@ -108,8 +153,7 @@ const PricingPage = () => {
                   plan.mostPopular ? 'bg-[#196be4] ring-1 ring-blue-500' : ''
                 }`}
                 data-aos="fade-up"
-                data-aos-delay={index * 150}
-              >
+                data-aos-delay={index * 150}>
                 {plan.mostPopular && (
                   <span className="absolute top-4 right-4 text-xs bg-indigo-500 px-2 py-1 rounded-full font-medium text-white">
                     Most Popular
@@ -173,7 +217,7 @@ const PricingPage = () => {
           <h2 className="text-3xl sm:text-4xl font-semibold mb-8 text-center" data-aos="fade-up">
             Get in Touch
           </h2>
-          <form className="space-y-6" data-aos="fade-up" data-aos-delay="100">
+          <form className="space-y-6" onSubmit={handleSubmit} data-aos="fade-up" data-aos-delay="100">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-300">
                 Full Name
@@ -181,6 +225,8 @@ const PricingPage = () => {
               <input
                 type="text"
                 id="name"
+                value={formData.name}
+                onChange={handleChange}
                 className="mt-1 w-full rounded-md border border-[#2a2a2a] bg-[#121212] px-4 py-2 text-white placeholder:text-gray-500"
                 placeholder="John Doe"
               />
@@ -192,6 +238,8 @@ const PricingPage = () => {
               <input
                 type="email"
                 id="email"
+                value={formData.email}
+                onChange={handleChange}
                 className="mt-1 w-full rounded-md border border-[#2a2a2a] bg-[#121212] px-4 py-2 text-white placeholder:text-gray-500"
                 placeholder="john@example.com"
               />
@@ -203,14 +251,15 @@ const PricingPage = () => {
               <textarea
                 id="message"
                 rows="5"
+                value={formData.message}
+                onChange={handleChange}
                 className="mt-1 w-full rounded-md border border-[#2a2a2a] bg-[#121212] px-4 py-2 text-white placeholder:text-gray-500"
                 placeholder="Tell us about your project, goals, timeline..."
               ></textarea>
             </div>
             <button
               type="submit"
-              className="w-full rounded-md bg-[#196be4] px-6 py-3 text-white font-medium hover:bg-blue-500 transition"
-            >
+              className="w-full rounded-md bg-[#196be4] px-6 py-3 text-white font-medium hover:bg-blue-500 transition">
               Send Message
             </button>
           </form>

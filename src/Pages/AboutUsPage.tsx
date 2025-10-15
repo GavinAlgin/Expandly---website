@@ -122,6 +122,7 @@ const AboutUsPage = () => {
                   <img
                     alt={section.author.name}
                     src={section.author.imageUrl}
+                    loading="lazy"
                     className="size-10 rounded-full bg-gray-800"
                   />
                   <div className="text-sm/6">
