@@ -14,18 +14,18 @@ interface TestimonialData {
 const testimonialsTop: TestimonialData[] = [
   {
     name: 'GoodMooddrip Shop',
-    title: 'Tech Startup Founder',
-    text: 'Elevate AI has revolutionized how we analyze user data. Their tools provide deep insights with minimal setup.',
+    title:'Local Colthing brand',
+    text: 'We Offer AI as part of your deliverables: e.g. chatbots, smart suggestions / content personalization, predictive UX, and AI‑assisted testing or error detection.',
     image: placeholderImage,
   },
   {
-    name: 'Sophia Liu',
-    title: 'Product Manager',
-    text: 'The integration was seamless and the impact immediate. Our workflows are faster and smarter than ever.',
+    name: 'Expandly',
+    title: 'Digital Web Agency',
+    text: 'Offered maintenance, updates, monitoring, UX optimization, analytics, iterating on the users’ feedback. Can be recurring revenue.',
     image: placeholderImage,
   },
   {
-    name: 'Carlos Mendoza',
+    name: 'Insight Evolution',
     title: 'CTO, Fintech Company',
     text: 'We’ve saved hundreds of hours thanks to TechLoom predictive analytics. A game-changer.',
     image: placeholderImage,
