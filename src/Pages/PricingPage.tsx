@@ -87,9 +87,10 @@ const PricingPage = () => {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
-  const [openFAQ, setOpenFAQ] = useState(null);
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
-  const toggleFAQ = (index) => {
+  // ✅ Typed index as number
+  const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
   };
 
@@ -140,18 +141,16 @@ const PricingPage = () => {
           <h2 className="text-4xl sm:text-5xl font-semibold" data-aos="fade-up">
             Transparent Pricing for Every Stage
           </h2>
-          <p className="mt-4 text-lg text-gray-200 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+          <p className="mt-4 text-lg text-gray-200 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay={100}>
             Whether you're building your first MVP or scaling a product, we have a plan that fits.
           </p>
 
           {/* Pricing Grid */}
-          <div className="mt-20 grid gap-10 lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2" data-aos="fade-up" data-aos-delay="200">
+          <div className="mt-20 grid gap-10 lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2" data-aos="fade-up" data-aos-delay={200}>
             {pricingPlans.map((plan, index) => (
               <div
                 key={plan.name}
-                className={`relative flex flex-col border border-[#2a2a2a] rounded-xl p-8 shadow-md bg-[#121212] hover:shadow-lg transition-all ${
-                  plan.mostPopular ? 'bg-[#196be4] ring-1 ring-blue-500' : ''
-                }`}
+                className={`relative flex flex-col border border-[#2a2a2a] rounded-xl p-8 shadow-md bg-[#121212] hover:shadow-lg transition-all ${plan.mostPopular ? 'bg-[#196be4] ring-1 ring-blue-500' : ''}`}
                 data-aos="fade-up"
                 data-aos-delay={index * 150}>
                 {plan.mostPopular && (
@@ -217,7 +216,7 @@ const PricingPage = () => {
           <h2 className="text-3xl sm:text-4xl font-semibold mb-8 text-center" data-aos="fade-up">
             Get in Touch
           </h2>
-          <form className="space-y-6" onSubmit={handleSubmit} data-aos="fade-up" data-aos-delay="100">
+          <form className="space-y-6" onSubmit={handleSubmit} data-aos="fade-up" data-aos-delay={100}>
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-300">
                 Full Name
@@ -248,9 +247,10 @@ const PricingPage = () => {
               <label htmlFor="message" className="block text-sm font-medium text-gray-300">
                 Project Details
               </label>
+              {/* ✅ rows fixed to number */}
               <textarea
                 id="message"
-                rows="5"
+                rows={5}
                 value={formData.message}
                 onChange={handleChange}
                 className="mt-1 w-full rounded-md border border-[#2a2a2a] bg-[#121212] px-4 py-2 text-white placeholder:text-gray-500"

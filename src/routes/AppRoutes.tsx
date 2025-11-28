@@ -1,5 +1,4 @@
-import React, { lazy } from 'react';
-import { Route, Navigate } from 'react-router-dom';
+import { lazy } from 'react';
 
 const Home = lazy(() => import('../Pages/HeroPage'));
 const Form = lazy(() => import('../Pages/FormPage'));

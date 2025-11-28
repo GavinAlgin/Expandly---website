@@ -1,5 +1,4 @@
 import { animate, useMotionValue, useTransform, motion } from 'framer-motion';
-import serviceIMG from '../../assets/MobileMockupbg.png';
 import { useEffect } from 'react';
 
 const ExperienceSection = () => {

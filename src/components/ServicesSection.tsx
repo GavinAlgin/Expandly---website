@@ -1,4 +1,3 @@
-import React from 'react';
 import bgImg from '../assets/ChatGPT Image Apr 15, 2025, 02_07_45 PM.png';
 
 const ServicesSection = () => {

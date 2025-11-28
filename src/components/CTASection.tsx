@@ -1,4 +1,3 @@
-import React from 'react';
 import bgImg from '../assets/ImageCTA.png';
 
 const CTASection = () => {

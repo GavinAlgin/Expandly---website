@@ -4,20 +4,35 @@ import mock from '../../assets/SAASMOCkup.png'
 import mock1 from '../../assets/downloaded-file.jpeg'
 import mock2 from '../../assets/webmock.jpeg'
 
-const projects = [
+interface Project {
+  title: string
+  description: string
+  image: string
+}
+
+interface ProjectSectionProps {
+  project: Project
+  zIndex: number
+  overlap: boolean
+}
+
+const projects: Project[] = [
   {
     title: 'Custom Web Development',
-    description: 'A modern and custom website which fits the asthetics and nature of your brand and style.',
+    description:
+      'A modern and custom website which fits the asthetics and nature of your brand and style.',
     image: mock,
   },
   {
     title: 'Unique Mobile Development',
-    description: 'A modern and custom mobile native app which fits the asthetics and nature of your brand and style and complatible for both IOS and Andriod.',
+    description:
+      'A modern and custom mobile native app which fits the asthetics and nature of your brand and style and compatible for both IOS and Android.',
     image: mock1,
   },
   {
-    title: 'Offline / Low Connectivity & PWA‑First Experiences',
-    description: 'We allow your platform to target audience deals with intermittent connectivity (rural, mobile data constraints), then ensuring solutions work offline, gracefully degrade, cache well, minimal load etc.',
+    title: 'Offline / Low Connectivity & PWA-First Experiences',
+    description:
+      'We allow your platform to target audience with intermittent connectivity (rural, mobile data constraints), ensuring solutions work offline, gracefully degrade, cache well, minimal load, etc.',
     image: mock2,
   },
 ]
@@ -37,7 +52,7 @@ export default function ProjectsShowcase() {
   )
 }
 
-function ProjectSection({ project, zIndex, overlap }) {
+function ProjectSection({ project, zIndex, overlap }: ProjectSectionProps) {
   const ref = useRef(null)
   const inView = useInView(ref, { amount: 0.6 })
 
@@ -60,16 +75,20 @@ function ProjectSection({ project, zIndex, overlap }) {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-      }}>
+      }}
+    >
       <motion.div
         className="p-6 sm:p-8 max-w-md"
         initial={{ opacity: 0 }}
         animate={{ opacity: inView ? 1 : 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}>
+        transition={{ duration: 0.8, delay: 0.3 }}
+      >
         <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
           {project.title}
         </h3>
-        <p className="text-[#888888] text-base sm:text-lg">{project.description}</p>
+        <p className="text-[#888888] text-base sm:text-lg">
+          {project.description}
+        </p>
       </motion.div>
     </motion.section>
   )
